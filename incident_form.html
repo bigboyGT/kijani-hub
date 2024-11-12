@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Incident Reporting Form</title>
+    <style>
+        /* Reset some default styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #babd8d;
+            color: #333;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h2 {
+            color: #7c6a0a;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        form {
+            background-color: #ffdac6;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        form:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        input[type="text"],
+        textarea,
+        input[type="file"] {
+            width: 100%;
+            padding: 12px 15px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1rem;
+            background-color: #fafafa;
+            transition: border 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        textarea:focus,
+        input[type="file"]:focus {
+            border-color: #fa9500;
+            box-shadow: 0 0 5px rgba(250, 149, 0, 0.5);
+            outline: none;
+        }
+
+        .cta-button {
+            background-color: #eb6424;
+            color: white;
+            padding: 12px 20px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            border-radius: 8px;
+            border: none;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #fa9500;
+        }
+
+        .file-upload-label {
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+            color: #7f8c8d;
+        }
+
+        /* Styling for the intensity slider */
+        .slider-container {
+            margin-bottom: 20px;
+        }
+
+        .slider-container label {
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .slider {
+            width: 100%;
+            margin: 10px 0;
+            height: 5px;
+            background: #ddd;
+            border-radius: 5px;
+            outline: none;
+            opacity: 0.85;
+            transition: opacity 0.2s ease;
+        }
+
+        .slider:hover {
+            opacity: 1;
+        }
+
+        .slider::-webkit-slider-thumb {
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #fa9500;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .slider::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #fa9500;
+            cursor: pointer;
+        }
+
+        .slider-value {
+            font-size: 1.2rem;
+            color: #2c3e50;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="http://localhost:3000/submit-incident" method="POST" enctype="multipart/form-data">
+        <h2>Incident Reporting Form</h2>
+
+        <label for="location">Location of Incident:</label>
+        <input type="text" id="location" name="location" placeholder="Enter the location" required>
+
+        <label for="incident_description">Description of Incident:</label>
+        <textarea id="incident_description" name="incident_description" rows="4" placeholder="Describe the incident in detail" required></textarea>
+
+        <label class="file-upload-label" for="incident_image">Upload an Image (Optional):</label>
+        <input type="file" id="incident_image" name="incident_image" accept="image/*">
+
+        <!-- Intensity Slider -->
+        <div class="slider-container">
+            <label for="incident_intensity">Intensity of Incident:</label>
+            <input type="range" id="incident_intensity" name="incident_intensity" min="1" max="10" value="5" class="slider" oninput="updateSliderValue(this.value)">
+            <div class="slider-value" id="sliderValue">Intensity: 5</div>
+        </div>
+
+        <button type="submit" class="cta-button">Submit Incident Report</button>
+    </form>
+
+    <script>
+        // Function to update the slider value in real-time
+        function updateSliderValue(value) {
+            document.getElementById('sliderValue').innerText = `Intensity: ${value}`;
+        }
+    </script>
+</body>
+
+</html>

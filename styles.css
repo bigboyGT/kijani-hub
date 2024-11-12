@@ -1,0 +1,426 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f9;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+ /* Basic Reset */
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f9;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Hero Section with Parallax Effect */
+.hero-section {
+    background: url('https://i.ibb.co/Rz3Gx1C/Earth-rotation.gif') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    position: relative;
+    text-align: center;
+    z-index: 1;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(1, 37, 12, 0.5);
+    z-index: -1;
+}
+
+.hero-section .logo {
+    margin-bottom: 1rem;
+}
+
+.hero-section .logo img {
+    max-width: 180px;
+}
+
+.hero-section h1 {
+    font-size: 4rem;
+    font-family: 'Playfair Display', serif;
+    text-transform: uppercase;
+    color: #f9d342;
+    margin-bottom: 1rem;
+    animation: fadeInDown 2s ease-in-out;
+}
+
+.hero-section p {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    animation: fadeInUp 2.5s ease-in-out;
+}
+
+.cta-button,
+.hero-nav a {
+    padding: 12px 30px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    margin: 0.5rem;
+}
+
+.cta-button:hover,
+.hero-nav a:hover {
+    background-color: #388e3c;
+}
+
+/* Hero Navigation */
+.hero-nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 1.5rem;
+}
+
+/* Keyframes */
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Section Styles */
+section {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #333;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 1;
+}
+
+.section-background {
+    background-color: #ffdac6;
+    padding: 4rem 0;
+}
+
+.conference-list,
+.news-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.conference-item,
+.news-item {
+    background-color: #333;
+    color: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.conference-item:hover,
+.news-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.conference-item h3,
+.news-item h3 {
+    font-size: 1.7rem;
+    margin-bottom: 1rem;
+}
+
+.conference-item img,
+.news-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* Section Buttons */
+.section-btn {
+    margin-top: 1rem;
+    padding: 12px 30px;
+    background-color: #fa9500;
+    color: white;
+    font-size: 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.section-btn:hover {
+    background-color: #eb6424;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 1.5rem 0;
+    text-align: center;
+}
+
+footer p {
+    font-size: 0.9rem;
+}
+
+/* Responsive Adjustments */
+@media (min-width: 768px) {
+    .conference-list,
+    .news-list {
+        flex-direction: row;
+    }
+
+    .hero-section h1 {
+        font-size: 5rem;
+    }
+
+    .cta-button {
+        font-size: 20px;
+    }
+}
+/* Hero Section */
+.hero-section {
+    background: url('https://i.ibb.co/Rz3Gx1C/Earth-rotation.gif') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    position: relative;
+    text-align: center;
+}
+
+.hero-section .logo img {
+    max-width: 180px;
+}
+
+.hero-section h1 {
+    font-size: 4rem;
+    color: #f9d342;
+    margin-bottom: 1rem;
+}
+
+.cta-button {
+    padding: 12px 30px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 18px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    margin: 0.5rem;
+}
+
+.cta-button:hover {
+    background-color: #388e3c;
+}
+
+/* Popup Overlay */
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Popup Content */
+.popup-content {
+    background-color: #ffdac6;
+    color: #333;
+    width: 90%;
+    max-width: 400px;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    animation: slideIn 0.4s ease-out;
+}
+
+.popup-buttons .consent-button {
+    background-color: #fa9500;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.consent-button:hover {
+    background-color: #eb6424;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Biodiversity Tracker Section */
+#biodiversity-tracker {
+    background-color: #babd8d; /* Light olive */
+    padding: 3rem 2rem;
+    color: #333;
+    text-align: center;
+    border-radius: 12px;
+    margin: 2rem auto;
+    max-width: 800px;
+}
+
+#biodiversity-tracker h2 {
+    font-size: 2.5rem;
+    color: #7c6a0a; /* Darker olive */
+    margin-bottom: 1rem;
+    font-family: 'Playfair Display', serif;
+}
+
+#biodiversity-tracker p {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+#biodiversity-tracker .cta-button {
+    background-color: #fa9500; /* Orange */
+    color: white;
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+#biodiversity-tracker .cta-button:hover {
+    background-color: #eb6424; /* Darker orange */
+}
+
+/* Reporting Environmental Incidents Section */
+#reporting-incidents {
+    background-color: #ffdac6; /* Soft peach */
+    padding: 3rem 2rem;
+    color: #333;
+    text-align: center;
+    border-radius: 12px;
+    margin: 2rem auto;
+    max-width: 800px;
+}
+
+#reporting-incidents h2 {
+    font-size: 2.5rem;
+    color: #7c6a0a; /* Darker olive */
+    margin-bottom: 1rem;
+    font-family: 'Playfair Display', serif;
+}
+
+#reporting-incidents p {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+#reporting-incidents .cta-button {
+    background-color: #4CAF50; /* Green for environmental theme */
+    color: white;
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+#reporting-incidents .cta-button:hover {
+    background-color: #388e3c; /* Darker green */
+}
+
+/* Section Spacing and Alignment */
+section {
+    margin-bottom: 2rem;
+}
+
+/* Media Queries for Responsiveness */
+@media (min-width: 768px) {
+    #biodiversity-tracker, #reporting-incidents {
+        padding: 4rem 3rem;
+    }
+
+    #biodiversity-tracker h2, #reporting-incidents h2 {
+        font-size: 3rem;
+    }
+
+    #biodiversity-tracker p, #reporting-incidents p {
+        font-size: 1.3rem;
+    }
+}

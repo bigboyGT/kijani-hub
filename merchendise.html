@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kijani Hub Merchandise</title>
+    <style>
+        /* General styling for merchandise section */
+        .merch-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            background-color: #ffdac6;
+            font-family: Arial, sans-serif;
+            color: #7c6a0a;
+        }
+
+        .merch-item {
+            background-color: #babd8d;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .merch-item:hover {
+            transform: scale(1.05);
+        }
+
+        .merch-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .merch-item h3 {
+            color: #fa9500;
+            margin: 10px 0 5px;
+        }
+
+        .merch-item p {
+            font-size: 0.9em;
+        }
+
+        .price {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #eb6424;
+        }
+
+        .add-to-cart-btn {
+            background-color: #fa9500;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .add-to-cart-btn:hover {
+            background-color: #eb6424;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Merchandise Section -->
+    <section class="merch-section">
+        <!-- Merchandise Item 1 -->
+        <div class="merch-item">
+            <a href="https://ibb.co/dMFLpV7"><img src="https://i.ibb.co/dMFLpV7/kijanihub-t-shirts.jpg" alt="kijanihub-t-shirts" border="0"></a>
+            <h3>Kijani Hub T-Shirt</h3>
+            <p>Eco-friendly cotton T-shirt with the Kijani Hub logo.</p>
+            <p class="price">kes 1000.00</p>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+
+        <!-- Merchandise Item 2 -->
+        <div class="merch-item">
+            <a href="https://ibb.co/JjpSnzt"><img src="https://i.ibb.co/JjpSnzt/kijanihub-water-bottle.jpg" alt="kijanihub-water-bottle" border="0"></a>
+            <h3>Kijani Hub Water Bottle</h3>
+            <p>Reusable water bottle, stay hydrated sustainably!</p>
+            <p class="price">kes 1500.00</p>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+
+        <!-- Merchandise Item 3 -->
+        <div class="merch-item">
+            <a href="https://ibb.co/W0MnSvS"><img src="https://i.ibb.co/W0MnSvS/kijanihub-notebook.jpg" alt="kijanihub-notebook" border="0"></a>
+            <h3>Kijani Hub Notebook</h3>
+            <p>Eco-friendly notebook for your thoughts and ideas.</p>
+            <p class="price">kes 1000.00</p>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+
+        <!-- Merchandise Item 4 -->
+        <div class="merch-item">
+            <a href="https://ibb.co/Bc5TGHK"><img src="https://i.ibb.co/Bc5TGHK/kijanihub-cap.jpg" alt="kijanihub-cap" border="0"></a>
+            <h3>Kijani Hub Cap</h3>
+            <p>Stylish cap with the Kijani Hub logo.</p>
+            <p class="price">kes 1200.00</p>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+    </section>
+
+</body>
+</html>
