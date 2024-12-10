@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shark Ocean Cleaner</title>
+    <style>
+        /* CSS Code */
+
+        /* General Reset */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: #0077b6;
+            color: #fff;
+            text-align: center;
+        }
+
+        header {
+            background: #023e8a;
+            padding: 10px 0;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+
+        header p {
+            margin: 5px 0;
+        }
+
+        /* Fullscreen Canvas */
+        canvas {
+            display: block;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        /* Hidden images for game assets */
+        img[hidden] {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Shark Ocean Cleaner</h1>
+        <p>Help the shark keep the ocean clean by eating trash!</p>
+        <p>Use arrow keys to move the shark.</p>
+        <p>Score: <span id="score">0</span></p>
+    </header>
+    <main>
+        <!-- Canvas for Game -->
+        <canvas id="gameCanvas"></canvas>
+
+        <!-- Hidden Images -->
+        <img id="backgroundImg" src="https://i.ibb.co/3czXvtS/underwater-bg.png" alt="Background" hidden>
+        <img id="sharkImg" src="https://i.ibb.co/JyG5QzT/shark.png" alt="Shark" hidden>
+        <img id="smallTrashImg" src="https://i.ibb.co/RP39rY2/small-trash.png" alt="Small Trash" hidden>
+        <img id="mediumTrashImg" src="https://i.ibb.co/pJ1pb2g/medium-trash.png" alt="Medium Trash" hidden>
+    </main>
+
+    <script>
+        // JavaScript Code
+
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Resize canvas to fullscreen
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            shark.x = canvas.width / 10;
+            shark.y = canvas.height / 2 - shark.height / 2;
+        }
+
+        // Retrieve images from HTML
+        const backgroundImg = document.getElementById('backgroundImg');
+        const sharkImg = document.getElementById('sharkImg');
+        const smallTrashImg = document.getElementById('smallTrashImg');
+        const mediumTrashImg = document.getElementById('mediumTrashImg');
+
+        // Shark object (thicker shark with increased dimensions)
+        const shark = {
+            x: canvas.width / 10,
+            y: canvas.height / 2 - 75, // Adjusted starting position for thicker shark
+            width: 160, // Increased width for thickness
+            height: 160, // Increased height for thickness
+            speed: 5,
+            dx: 0,
+            dy: 0,
+        };
+
+        // Trash objects
+        let trashArray = [];
+        let score = 0;
+        let isGameOver = false;
+
+        // Generate random trash
+        function generateTrash() {
+            if (!isGameOver) {
+                const sizeIndex = Math.floor(Math.random() * 2); // 0: small, 1: medium
+                const img = sizeIndex === 0 ? smallTrashImg : mediumTrashImg;
+                const trashSize = sizeIndex === 0 ? 30 : 50; // Small: 30px, Medium: 50px
+                const speed = 2 + Math.random() * 2; // Random speed
+
+                trashArray.push({
+                    x: canvas.width,
+                    y: Math.random() * (canvas.height - trashSize),
+                    width: trashSize,
+                    height: trashSize,
+                    speed,
+                    img, // Reference to the appropriate trash image
+                });
+            }
+        }
+
+        // Move the shark
+        function moveShark() {
+            shark.x += shark.dx;
+            shark.y += shark.dy;
+
+            // Boundaries
+            if (shark.x < 0) shark.x = 0;
+            if (shark.x + shark.width > canvas.width) shark.x = canvas.width - shark.width;
+            if (shark.y < 0) shark.y = 0;
+            if (shark.y + shark.height > canvas.height) shark.y = canvas.height - shark.height;
+        }
+
+        // Move and remove trash
+        function moveTrash() {
+            for (let i = trashArray.length - 1; i >= 0; i--) {
+                const trash = trashArray[i];
+                trash.x -= trash.speed;
+
+                // Remove trash if it goes offscreen
+                if (trash.x + trash.width < 0) {
+                    gameOver(); // End the game if trash passes
+                }
+            }
+        }
+
+        // Detect collision between shark and trash
+        function detectCollision() {
+            trashArray.forEach((trash, index) => {
+                if (
+                    shark.x < trash.x + trash.width &&
+                    shark.x + shark.width > trash.x &&
+                    shark.y < trash.y + trash.height &&
+                    shark.y + shark.height > trash.y
+                ) {
+                    // Collision detected
+                    score += 10; // Add to score
+                    document.getElementById('score').textContent = score;
+                    trashArray.splice(index, 1); // Remove trash
+                }
+            });
+        }
+
+        // Draw background
+        function drawBackground() {
+            ctx.drawImage(backgroundImg, 0, 0, canvas.width, canvas.height);
+        }
+
+        // Draw shark
+        function drawShark() {
+            ctx.drawImage(sharkImg, shark.x, shark.y, shark.width, shark.height);
+        }
+
+        // Draw trash
+        function drawTrash() {
+            trashArray.forEach(trash => {
+                ctx.drawImage(trash.img, trash.x, trash.y, trash.width, trash.height);
+            });
+        }
+
+        // Display Game Over screen
+        function gameOver() {
+            isGameOver = true;
+
+            // Stop all trash movement
+            trashArray = [];
+
+            // Clear the canvas and display Game Over message
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.7)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = '#fff';
+            ctx.font = '36px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText('GAME OVER', canvas.width / 2, canvas.height / 2 - 20);
+            ctx.fillText(`Score: ${score}`, canvas.width / 2, canvas.height / 2 + 20);
+
+            // Display Try Again button
+            const tryAgainButton = document.createElement('button');
+            tryAgainButton.textContent = 'Try Again';
+            tryAgainButton.style.position = 'absolute';
+            tryAgainButton.style.left = `${canvas.offsetLeft + canvas.width / 2 - 50}px`;
+            tryAgainButton.style.top = `${canvas.offsetTop + canvas.height / 2 + 50}px`;
+            tryAgainButton.style.padding = '10px 20px';
+            tryAgainButton.style.backgroundColor = '#4CAF50';
+            tryAgainButton.style.color = '#fff';
+            tryAgainButton.style.border = 'none';
+            tryAgainButton.style.borderRadius = '5px';
+            tryAgainButton.style.cursor = 'pointer';
+
+            document.body.appendChild(tryAgainButton);
+
+            tryAgainButton.addEventListener('click', () => {
+                document.body.removeChild(tryAgainButton);
+                resetGame();
+            });
+        }
+
+        // Reset the game
+        function resetGame() {
+            isGameOver = false;
+            score = 0;
+            document.getElementById('score').textContent = score;
+            shark.x = canvas.width / 20;
+            shark.y = canvas.height / 25 - shark.height / 5;
+            trashArray = [];
+            gameLoop();
+        }
+
+        // Update game objects
+        function update() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear canvas
+
+            // Draw the background
+            drawBackground();
+
+            // Move and draw objects
+            moveShark();
+            moveTrash();
+            detectCollision();
+            drawShark();
+            drawTrash();
+        }
+
+        // Game loop
+        function gameLoop() {
+            if (!isGameOver) {
+                update();
+                requestAnimationFrame(gameLoop);
+            }
+        }
+
+        // Event listeners for shark movement
+        document.addEventListener('keydown', e => {
+            if (e.key === 'ArrowUp') shark.dy = -shark.speed;
+            if (e.key === 'ArrowDown') shark.dy = shark.speed;
+            if (e.key === 'ArrowLeft') shark.dx = -shark.speed;
+            if (e.key === 'ArrowRight') shark.dx = shark.speed;
+        });
+
+        document.addEventListener('keyup', e => {
+            if (e.key === 'ArrowUp' || e.key === 'ArrowDown') shark.dy = 0;
+            if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') shark.dx = 0;
+        });
+
+        // Adjust canvas to fullscreen on window resize
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas(); // Initial resize
+
+        // Spawn trash every 2 seconds
+        setInterval(generateTrash, 2000);
+
+        // Start the game
+        gameLoop();
+    </script>
+</body>
+
+</html>

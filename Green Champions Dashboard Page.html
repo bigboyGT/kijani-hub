@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Champions Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #e8f5e9;
+            color: #2e7d32;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: linear-gradient(90deg, #4caf50, #2e7d32);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .dashboard {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .dashboard .stat {
+            display: inline-block;
+            width: 200px;
+            margin: 20px;
+            padding: 20px;
+            background: #a5d6a7;
+            border-radius: 10px;
+            font-size: 1.2em;
+        }
+
+        .dashboard .btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            background: #2e7d32;
+            color: white;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .dashboard .btn:hover {
+            background: #66bb6a;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Green Champions Dashboard</h1>
+        <p>Track your impact and champion sustainability initiatives.</p>
+    </header>
+    <main class="dashboard">
+        <div class="stat">Trees Planted: <strong>1,234</strong></div>
+        <div class="stat">CO₂ Offset: <strong>12,345 kg</strong></div>
+        <div class="stat">Communities Impacted: <strong>56</strong></div>
+        <button class="btn">Explore Initiatives</button>
+    </main>
+</body>
+</html>

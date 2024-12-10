@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biodiversity Tracking</title>
+    <link rel="stylesheet" href="track biodiversity.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1>Biodiversity Tracking</h1>
+    </header>
+
+    <main>
+        <!-- Form Section -->
+        <section>
+            <h2>Track a Species</h2>
+            <form id="biodiversityForm">
+                <label for="speciesName">Species Name:</label>
+                <input type="text" id="speciesName" name="speciesName" placeholder="e.g., African Elephant" required>
+
+                <label for="observationDetails">Observation Details:</label>
+                <textarea id="observationDetails" name="observationDetails" placeholder="Details about the observation" required></textarea>
+
+                <label for="location">Location Coordinates:</label>
+                <input type="text" id="latitude" name="latitude" placeholder="Latitude" readonly>
+                <input type="text" id="longitude" name="longitude" placeholder="Longitude" readonly>
+
+                <button type="button" id="getLocation">Get Current Location</button>
+
+                <label for="imageUpload">Upload Image:</label>
+                <input type="file" id="imageUpload" name="imageUpload" accept="image/*" required>
+
+                <button type="submit">Submit Observation</button>
+            </form>
+        </section>
+
+        <!-- Map Section -->
+        <section>
+            <h2>Map</h2>
+            <div id="map" style="height: 400px;"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Kijanihub. All rights reserved.</p>
+    </footer>
+
+    <script src="track biodiversity.js"></script>
+</body>
+
+</html>
