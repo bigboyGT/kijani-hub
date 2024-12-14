@@ -36,18 +36,21 @@ header {
     text-decoration: none;
     color: white;
     font-weight: bold;
-    background-color: #4caf50;
+    background-color: #eff4ef;
     padding: 10px 20px;
     border-radius: 8px;
     transition: background-color 0.3s ease;
 }
 
 .header-nav a:hover,
-.dropdown-btn:hover {
-    background-color: #388e3c;
-}
+.dropdown-btn:hover 
 
 /* Hero Section */
+.hero-section {
+    position: relative;
+    z-index: 1; /* Lower than dropdown */
+}
+
 .hero-section {
     display: flex;
     flex-direction: column;
@@ -253,7 +256,6 @@ body {
     background-color: 
     padding: 4rem 2rem;
 }
-
 
 
 /* Section Buttons */
