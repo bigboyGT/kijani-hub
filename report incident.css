@@ -1,0 +1,127 @@
+/* General Page Styling */
+body {
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom right, #e0f7fa, #b3e5fc);
+    color: #37474f;
+}
+
+/* Header */
+header {
+    background-color: #0277bd;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Main Content */
+main {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Form Styling */
+form {
+    background: #ffffff;
+    padding: 20px;
+    border: 2px solid #4fc3f7;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+form h2 {
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: #0277bd;
+    text-align: center;
+}
+
+form label {
+    font-weight: 600;
+    margin-top: 15px;
+    display: block;
+    color: #01579b;
+}
+
+form input,
+form textarea,
+form select,
+form button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #b3e5fc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+form input:focus,
+form textarea:focus,
+form select:focus {
+    outline: none;
+    border-color: #0288d1;
+    box-shadow: 0 0 5px rgba(2, 136, 209, 0.5);
+}
+
+form button {
+    background-color: #0288d1;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #01579b;
+}
+
+/* Range Slider Styling */
+form input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background: #b3e5fc;
+    height: 5px;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+form input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    background: #0277bd;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Map Section */
+#map {
+    width: 100%;
+    height: 400px;
+    border: 2px solid #81d4fa;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px 0;
+    background: #0277bd;
+    color: white;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+    font-size: 14px;
+}

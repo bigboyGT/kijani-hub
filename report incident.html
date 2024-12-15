@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Environmental Incident Reporting</title>
+    <link rel="stylesheet" href="report incident.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1>Report Environmental Incidents</h1>
+    </header>
+
+    <main>
+        <!-- Form Section -->
+        <section>
+            <h2>Incident Details</h2>
+            <form id="incidentForm">
+                <label for="incidentType">Incident Type:</label>
+                <select id="incidentType" name="incidentType" required>
+                    <option value="" disabled selected>Select an Incident Type</option>
+                    <option value="pollution">Pollution</option>
+                    <option value="deforestation">Deforestation</option>
+                    <option value="wildlife poaching">Wildlife Poaching</option>
+                    <option value="illegal dumping">Illegal Dumping</option>
+                </select>
+
+                <label for="incidentDetails">Incident Description:</label>
+                <textarea id="incidentDetails" name="incidentDetails" placeholder="Describe the incident" required></textarea>
+
+                <label for="location">Location Coordinates:</label>
+                <input type="text" id="latitude" name="latitude" placeholder="Latitude" readonly>
+                <input type="text" id="longitude" name="longitude" placeholder="Longitude" readonly>
+                <button type="button" id="getLocation">Get Current Location</button>
+
+                <label for="intensity">Incident Intensity:</label>
+                <input type="range" id="intensity" name="intensity" min="1" max="5" value="3" oninput="updateIntensityValue(this.value)">
+                <span id="intensityValue">3</span>
+
+                <label for="imageUpload">Upload Incident Image:</label>
+                <input type="file" id="imageUpload" name="imageUpload" accept="image/*" required>
+
+                <button type="submit">Submit Incident Report</button>
+            </form>
+        </section>
+
+        <!-- Map Section -->
+        <section>
+            <h2>Incident Location</h2>
+            <div id="map" style="height: 400px;"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Kijanihub. All rights reserved.</p>
+    </footer>
+
+    <script src="report incident.js"></script>
+</body>
+
+</html>

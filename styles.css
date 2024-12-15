@@ -1,0 +1,391 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background: linear-gradient(120deg, #037e36, #80a5dd, #ffa06a, #ffd453);
+    background-size: 400% 400%;
+    animation: gradientMove 10s ease infinite;
+    color: #333;
+}
+
+/* Header Section */
+header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px 40px;
+    background: #000701;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.header-nav {
+    display: flex;
+    margin-left: auto;
+    gap: 5px;
+}
+
+.header-nav a,
+.dropdown-btn {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    background-color: #eff4ef;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.header-nav a:hover,
+.dropdown-btn:hover 
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    z-index: 1; /* Lower than dropdown */
+}
+
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+    text-align: center;
+    color: rgb(245, 249, 250);
+    background: url('https://i.ibb.co/Rz3Gx1C/Earth-rotation.gif') no-repeat center center/cover;
+    position: relative;
+}
+
+/* Keyframes */
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-section img {
+    max-width: 300px;
+    height: auto;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5));
+}
+
+.hero-section h1 {
+    font-size: 4rem;
+    font-family: 'Playfair Display', serif;
+    text-transform: uppercase;
+    color: #f9d342;
+    margin-bottom: 1rem;
+    animation: fadeInDown 2s ease-in-out;
+}
+
+.hero-section p {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    animation: fadeInUp 2.5s ease-in-out;
+}
+
+.cta-button {
+    text-decoration: none;
+    background-color: #fa9500;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #eb6424;
+    transform: translateY(-3px);
+}
+
+/* Gradient Animation */
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+
+.conference-list,
+.news-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.conference-item,
+.news-item {
+    background-color: #333;
+    color: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.conference-item:hover,
+.news-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.conference-item h3,
+.news-item h3 {
+    font-size: 1.7rem;
+    margin-bottom: 1rem;
+}
+
+.conference-item img,
+.news-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* General Styling */
+body {
+    font-family: "Arial", sans-serif;
+    background-color: #ffdac6;
+    color: #7c6a0a;
+    margin: 0;
+    padding: 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #fa9500;
+    text-shadow: 1px 1px 5px #7c6a0a;
+}
+
+/* Share Your Post Form Styling */
+#share-post {
+    background: #babd8d;
+    padding: 30px;
+    border-radius: 10px;
+    width: 100%;
+    margin: 20px auto;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.styled-form label {
+    display: block;
+    font-weight: bold;
+    margin: 10px 0 5px;
+    color: #7c6a0a;
+}
+
+.styled-form input[type="text"],
+.styled-form textarea,
+.styled-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #7c6a0a;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.styled-form textarea {
+    resize: none;
+}
+
+.styled-form select {
+    background-color: #fa9500;
+    color: white;
+    font-weight: bold;
+}
+
+.styled-form .submit-btn {
+    display: block;
+    background-color: #fa9500;
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    margin: 0 auto;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.styled-form .submit-btn:hover {
+    background-color: #eb6424;
+}
+
+/* Section Backgrounds */
+.section-background { background: linear-gradient(120deg, #037e36, #80a5dd, #ffa06a, #ffd453);
+    background-size: 400% 400%;
+    animation: gradientMove 10s ease infinite;
+    padding: 4rem 2rem;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    background-color: 
+    padding: 4rem 2rem;
+}
+
+
+/* Section Buttons */
+.section-btn {
+    margin-top: 1rem;
+    padding: 12px 30px;
+    background: linear-gradient(120deg, #037e36, #80a5dd, #ffa06a, #ffd453);
+    background-size: 400% 400%;
+    animation: gradientMove 10s ease infinite;
+    padding: 4rem 2rem;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.section-btn:hover {
+    background-color: #388e3c;
+}
+
+/* Special Sections */
+#biodiversity-tracker {
+    background-color: #babd8d;
+    padding: 3rem 2rem;
+    color: #333;
+    border-radius: 12px;
+    text-align: center;
+    margin: 2rem auto;
+    max-width: 800px;
+}
+
+#biodiversity-tracker h2,
+#reporting-incidents h2 {
+    color: #7c6a0a;
+    font-family: 'Playfair Display', serif;
+}
+
+#reporting-incidents {
+    background-color: #ffdac6;
+    padding: 3rem 2rem;
+    color: #333;
+    border-radius: 12px;
+    text-align: center;
+    margin: 2rem auto;
+    max-width: 800px;
+}
+
+#biodiversity-tracker .cta-button,
+#reporting-incidents .cta-button {
+    background-color: #fa9500;
+}
+
+#biodiversity-tracker .cta-button:hover,
+#reporting-incidents .cta-button:hover {
+    background-color: #eb6424;
+}
+/* Responsive Adjustments */
+@media (min-width: 768px) {
+    .hero-section h1 {
+        font-size: 5rem;
+    }
+
+    .cta-button {
+        font-size: 20px;
+    }
+
+    #biodiversity-tracker,
+    #reporting-incidents {
+        padding: 4rem 3rem;
+    }
+
+    section h2 {
+        font-size: 3rem;
+    }
+}
+@media (max-width: 768px) {
+    .header-nav {
+        display: none;
+        flex-direction: column;
+    }
+
+    .menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        color: white;
+        cursor: pointer;
+    }
+
+    .menu-toggle.open + .header-nav {
+        display: flex;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-nav {
+        justify-content: flex-start; /* Aligned buttons to the left */
+    }
+
+    .header-nav .cta-button,
+    .header-nav a,
+    .dropdown-btn {
+        margin-left: 10px;
+    }
+
+    .dropdown-content {
+        min-width: 160px;
+    }
+
+    .hero-section h1 {
+        font-size: 3rem;
+    }
+
+    .conference-item,
+    .news-item {
+        width: 100%;
+        max-width: 350px;
+    }
+}
+@media (max-width: 768px) {
+    footer {
+        text-align: center;
+    }
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 1.5rem 0;
+    text-align: center;
+    font-size: 0.9rem;
+}
+

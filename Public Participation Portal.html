@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Public Participation Portal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #e3f2fd;
+            color: #0d47a1;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: linear-gradient(90deg, #1976d2, #0d47a1);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .portal {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .portal form {
+            margin: 20px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .portal input, .portal textarea {
+            margin: 10px 0;
+            padding: 10px;
+            width: 80%;
+            max-width: 500px;
+            border: 1px solid #1976d2;
+            border-radius: 5px;
+        }
+
+        .portal button {
+            padding: 10px 20px;
+            border: none;
+            background: #0d47a1;
+            color: white;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .portal button:hover {
+            background: #1976d2;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Public Participation Portal</h1>
+        <p>Have your voice heard on key environmental issues.</p>
+    </header>
+    <main class="portal">
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <textarea placeholder="Your Suggestions/Feedback" rows="5" required></textarea>
+            <button>Submit</button>
+        </form>
+    </main>
+</body>
+</html>

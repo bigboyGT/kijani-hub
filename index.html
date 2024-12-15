@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Kijanihub - Environmental Website</title>
+    <meta name="description" content="Kijanihub - Your gateway to environmental conservation, biodiversity tracking, and eco-friendly news.">
+    <meta name="keywords" content="environment, conservation, biodiversity, eco-friendly, Kijanihub">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stylish Header</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="header-nav">
+            <a href="donate.html" target="_blank" class="cta-button">Donate</a>
+            <a href="merchendise.html" target="_blank" class="cta-button">Merchandise</a>
+            <a href="GIS SERVICES.html" target="_blank" class="cta-button">GIS services</a>
+            <a href="shark game.html" target="_blank" class="cta-button">fun and games</a>
+            <a href="Green Champions Dashboard Page.html" target="_blank" class="cta-button">green champions</a>
+            
+        </nav>
+    </header>
+    <script src="script.js"></script>
+</body>
+</html>
+
+   <!-- Hero Section -->
+   <section id="home" class="hero-section">
+    
+    <h1>Welcome to Kijanihub</h1>
+    <p>Your gateway to environmental conservation and biodiversity tracking.</p>
+    <div class="species-counter-wrapper">
+        <div class="species-counter"></div>
+        <h5>Number of Species to Be Tracked</h5>
+        <div class="counter" id="species-counter">0</div>
+    </div>
+    <a href="track biodiversity.html" class="cta-button">track biodiversity</a>
+</section>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const counterElement = document.getElementById('species-counter');
+        let count = 0;
+        const target = 30000; // Target number
+        const duration = 5000; // Duration in milliseconds
+        const increment = Math.ceil(target / (duration / 16)); // Increment per frame
+
+        const updateCounter = () => {
+            count += increment;
+            if (count > target) count = target;
+            counterElement.textContent = count.toLocaleString(); // Format as a number with commas
+            if (count < target) {
+                requestAnimationFrame(updateCounter);
+            }
+        };
+
+        updateCounter();
+    });
+</script>
+
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How It Works - Kijani Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        .how-it-works-section {
+            text-align: center;
+            padding: 60px 20px;
+            background-color: #eb6424;
+            color: #fff;
+        }
+
+        .how-it-works-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            letter-spacing: 1.5px;
+        }
+
+        .how-it-works-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .how-it-works-item {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .how-it-works-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .how-it-works-item i {
+            font-size: 3em;
+            margin-bottom: 15px;
+            color: #eb6424;
+            transition: color 0.3s ease;
+        }
+
+        .how-it-works-item h3 {
+            font-size: 1.6em;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .how-it-works-item p {
+            font-size: 1em;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .how-it-works-item:hover i {
+            color: #ffdac6;
+        }
+
+        .how-it-works-item:hover h3 {
+            color: #eb6424;
+        }
+
+        .how-it-works-item:hover p {
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="how-it-works-section">
+        <h2>How Kijani Hub Works</h2>
+        <div class="how-it-works-grid">
+
+            <!-- Join the Movement -->
+            <div class="how-it-works-item">
+                <i class="fas fa-handshake"></i>
+                <h3>Join the Movement</h3>
+                <p>Get involved! Become a member or volunteer. Connect with like-minded individuals passionate about creating a greener future.</p>
+            </div>
+
+            <!-- Attend Workshops -->
+            <div class="how-it-works-item">
+                <i class="fas fa-chalkboard-teacher"></i>
+                <h3>Attend Workshops & Events</h3>
+                <p>Learn from experts at our interactive workshops and community events. Empower yourself with knowledge on environmental sustainability and climate change.</p>
+            </div>
+
+            <!-- Track Biodiversity -->
+            <div class="how-it-works-item">
+                <i class="fas fa-leaf"></i>
+                <h3>Track Biodiversity</h3>
+                <p>Use our AI species scanner to track local wildlife and biodiversity. Participate in biodiversity reporting and help conserve endangered species.</p>
+            </div>
+
+            <!-- Report Environmental Incidents -->
+            <div class="how-it-works-item">
+                <i class="fas fa-exclamation-triangle"></i>
+                <h3>Report Environmental Incidents</h3>
+                <p>Spot environmental hazards? Report them to make an impact. Contribute to real-time environmental incident tracking and create safer, greener communities.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- FontAwesome Script -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+
+<!-- Conference Meetings Section -->
+<section id="conference-meetings" class="section-background">
+    <h2>Upcoming Conferences</h2>
+    <div class="conference-list">
+        <div class="conference-item">
+            <h3>World Environmental Forum 2024</h3>
+            <img src="https://i.ibb.co/4s2gcVq/Screenshot-2024-02-08-at-11-46-19.jpg" alt="World Environmental Forum 2024">
+            <p>Date: September 25, 2024 | Location: Nairobi, Kenya</p>
+        </div>
+        <div class="conference-item">
+            <h3>Green Tech Expo 2024</h3>
+            <img src="https://i.ibb.co/1fp6shp/cropped-S-111411279.jpg" alt="Green Tech Expo 2024">
+            <p>Date: October 12, 2024 | Location: Berlin, Germany</p>
+        </div>
+    </div>
+</section>
+
+<!-- News Section -->
+<section id="news">
+    <h2>Latest News</h2>
+    <div class="news-list">
+        <div class="news-item">
+            <h3>New Climate Action Policies Released</h3>
+            <img src="https://i.ibb.co/wcmb0Js/DSC01733.jpg" alt="Climate Action Policies Release Event">
+            <p>The global community is pushing for aggressive climate action with new policies released in 2024.</p>
+        </div>
+        <div class="news-item">
+            <h3>Advances in Solar Energy Tech</h3>
+           <img src="https://i.ibb.co/wh39mDM/SOLAR-PANELS.jpg" alt="SOLAR-PANELS">
+            <p>Solar technology is evolving, offering more sustainable energy solutions at a lower cost than ever before.</p>
+        </div>
+    </div>
+</section>
+
+
+<section id="share-post">
+    <h2 class="section-title"> Share Your Post</h2>
+    <form id="post-form" class="styled-form">
+        <label for="post-title">Post Title</label>
+        <input type="text" id="post-title" placeholder="Enter your post title..." required>
+
+        <label for="post-content">Write Your Post</label>
+        <textarea id="post-content" rows="6" placeholder="Write your thoughts here..." required></textarea>
+
+        <label for="post-category">Post Category</label>
+        <select id="post-category" required>
+            <option value="news">🌍 Environmental News</option>
+            <option value="stories">📖 Success Stories</option>
+            <option value="initiatives">💡 Eco-Initiatives</option>
+            <option value="opinions">🗣️ Expert Opinions</option>
+        </select>
+
+        <button type="submit" class="submit-btn">📤 Share Post</button>
+    </form>
+</section>
+
+<script>document.getElementById('post-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const title = document.getElementById('post-title').value;
+    const content = document.getElementById('post-content').value;
+    const category = document.getElementById('post-category').value;
+
+    alert(`Your post titled "${title}" has been submitted under "${category}"!`);
+    
+    // Clear form
+    document.getElementById('post-form').reset();
+});
+</script>
+
+<!-- Biodiversity Tracker Section -->
+<section id="biodiversity-tracker">
+    <h2>Biodiversity Tracker</h2>
+    <p>Monitor global biodiversity changes and contribute to data collection.</p>
+    <a href="track biodiversity.html" target="_blank" class="cta-button">Track Biodiversity</a>
+</section>
+
+<!-- Reporting Environmental Incidents Section -->
+<section id="reporting-incidents">
+    <h2>Report an Environmental Incident</h2>
+    <p>If you've witnessed any environmental hazards, please report them here to help preserve our ecosystems.</p>
+    <a href="report incident.html" target="_blank" class="cta-button">Report Incident</a>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2024 Kijanihub. All rights reserved.</p>
+</footer>
+
+<style>
+    /* General Reset */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    /* Header Styling */
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 20px;
+        background-color: #333;
+    }
+
+    .header-logo img {
+        height: 50px;
+    }
+
+    .header-nav {
+        display: flex;
+        align-items: center;
+    }
+
+    .header-nav a,
+    .header-nav .cta-button,
+    .dropdown-btn {
+        color: #fff;
+        margin-right: 15px;
+        text-decoration: none;
+        font-weight: bold;
+        padding: 8px 15px;
+        background-color: #4CAF50;
+        border-radius: 5px;
+    }
+
+    .header-nav a:hover,
+    .dropdown-btn:hover {
+        background-color: #388e3c;
+    }
+
+    /* Dropdown Styling */
+    .dropdown {
+        position: relative;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        top: 100%;
+        background-color: #444;
+        min-width: 200px;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+        overflow: hidden;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropdown-content a {
+        color: #fff;
+        padding: 10px;
+        display: block;
+        text-decoration: none;
+    }
+
+    /* Biodiversity & Report Incident Sections */
+    #biodiversity-tracker,
+    #reporting-incidents {
+        text-align: center;
+        padding: 2rem 1rem;
+        margin: 2rem auto;
+        max-width: 800px;
+    }
+
+    .cta-button {
+        display: inline-block;
+        margin-top: 1rem;
+        padding: 12px 20px;
+        font-size: 16px;
+        color: white;
+        background-color: #fa9500;
+        border-radius: 8px;
+        text-decoration: none;
+        transition: background-color 0.3s;
+    }
+
+    .cta-button:hover {
+        background-color: #eb6424;
+    }
+</style>
+</body>
+</html>

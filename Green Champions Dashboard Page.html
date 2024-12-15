@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Environmental Projects Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header Section */
+        header {
+            text-align: center;
+            color: white;
+            padding: 20px 40px;
+            background: linear-gradient(90deg, #4caf50, #2e7d32);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            font-size: 2.8em;
+            margin: 10px 0;
+        }
+
+        header p {
+            font-size: 1.2em;
+        }
+
+        /* Section Styling */
+        section {
+            margin: 30px auto;
+            padding: 20px;
+            max-width: 1200px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+
+        section h2 {
+            font-size: 2em;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #2e7d32;
+        }
+
+        /* Green Champions Dashboard */
+        .dashboard {
+            text-align: center;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .dashboard .stat {
+            width: 300px;
+            margin: 20px;
+            padding: 20px;
+            background: #a5d6a7;
+            border-radius: 10px;
+            font-size: 1.2em;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .dashboard .stat:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .dashboard .stat strong {
+            font-size: 1.5em;
+            color: #1b5e20;
+        }
+
+        .dashboard .btn {
+            margin-top: 20px;
+            padding: 12px 30px;
+            border: none;
+            background: #2e7d32;
+            color: white;
+            font-size: 1em;
+            font-weight: bold;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .dashboard .btn:hover {
+            background: #66bb6a;
+            transform: scale(1.1);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Climate Project Tracker */
+        .tracker .project {
+            margin: 20px 0;
+            padding: 20px;
+            background: #b2dfdb;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .tracker .project:hover {
+            transform: scale(1.03);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .tracker .project h3 {
+            margin-bottom: 10px;
+        }
+
+        .tracker .project button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            border: none;
+            background: #004d40;
+            color: white;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .tracker .project button:hover {
+            background: #00796b;
+            transform: scale(1.05);
+        }
+
+        .tracker .project button a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Village Barazas Digital Hub */
+        .hub img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin: 20px 0;
+            transition: transform 0.3s;
+        }
+
+        .hub img:hover {
+            transform: scale(1.05);
+        }
+
+        .hub button {
+            padding: 10px 20px;
+            border: none;
+            background: #33691e;
+            color: white;
+            font-weight: bold;
+            font-size: 1em;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .hub button:hover {
+            background: #558b2f;
+            transform: scale(1.1);
+        }
+
+        /* Public Participation Portal */
+        .portal form {
+            margin: 20px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .portal input, .portal textarea {
+            margin: 10px 0;
+            padding: 10px;
+            width: 80%;
+            max-width: 500px;
+            border: 1px solid #1976d2;
+            border-radius: 5px;
+        }
+
+        .portal button {
+            padding: 10px 20px;
+            border: none;
+            background: #0d47a1;
+            color: white;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .portal button:hover {
+            background: #1976d2;
+            transform: scale(1.05);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .dashboard .stat, .tracker .project {
+                width: 90%;
+                margin: 10px auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Environmental Projects Dashboard</h1>
+        <p>Explore various initiatives and opportunities for sustainable development.</p>
+    </header>
+
+    <!-- Green Champions Dashboard -->
+    <section>
+        <h2>Green Champions Dashboard</h2>
+        <div class="dashboard">
+            <div class="stat">Trees Planted: <strong>1,234</strong></div>
+            <div class="stat">CO₂ Offset: <strong>12,345 kg</strong></div>
+            <div class="stat">Communities Impacted: <strong>56</strong></div>
+            <button class="btn">Explore Initiatives</button>
+        </div>
+    </section>
+
+    <!-- Climate Project Funding Tracker -->
+    <section>
+        <h2>Climate Project Funding Tracker</h2>
+        <div class="tracker">
+            <div class="project">
+                <h3>Solar Energy Initiative</h3>
+                <p>Funding Goal: ksh500,000</p>
+                <p>Current Funding: ksh300,000</p>
+                <button><a href="donate.html" target="_blank" class="cta-button">Contribute Now</a></button>
+            </div>
+            <div class="project">
+                <h3>Rainwater Harvesting Program</h3>
+                <p>Funding Goal: ksh200,000</p>
+                <p>Current Funding: ksh120,000</p>
+                <button><a href="donate.html" target="_blank" class="cta-button">Contribute Now</a></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Village Barazas Digital Hub -->
+    <section>
+        <h2>Village Barazas Digital Hub</h2>
+        <div class="hub">
+            <img src="https://i.ibb.co/GVfFv4z/maasai-village-masai-mara-kenya.jpg" alt="maasai-village-masai-mara-kenya">
+            <p>Join discussions and access valuable resources for sustainable development.</p>
+            <button>Join the Hub</button>
+        </div>
+    </section>
+
+    <!-- Public Participation Portal -->
+    <section>
+        <h2>Public Participation Portal</h2>
+        <div class="portal">
+            <form>
+                <input type="text" placeholder="Your Name" required>
+                <textarea placeholder="Your Suggestions/Feedback" rows="5" required></textarea>
+                <button>Submit</button>
+            </form>
+        </div>
+    </section>
+</body>
+</html>
